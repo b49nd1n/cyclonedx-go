@@ -195,13 +195,16 @@ func convertEvidence(c *Component, specVersion SpecVersion) {
 	}
 
 	if specVersion < SpecVersion1_6 {
-		for i := range *c.Evidence.Occurrences {
-			occ := &(*c.Evidence.Occurrences)[i]
+		if c.Evidence != nil && c.Evidence.Occurrences != nil {
 
-			occ.Line = nil
-			occ.Offset = nil
-			occ.Symbol = ""
-			occ.AdditionalContext = ""
+			for i := range *c.Evidence.Occurrences {
+				occ := &(*c.Evidence.Occurrences)[i]
+	
+				occ.Line = nil
+				occ.Offset = nil
+				occ.Symbol = ""
+				occ.AdditionalContext = ""
+			}
 		}
 	}
 
