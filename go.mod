@@ -1,4 +1,4 @@
-module github.com/CycloneDX/cyclonedx-go
+module github.com/b49nd1n/cyclonedx-go
 
 go 1.20
 
